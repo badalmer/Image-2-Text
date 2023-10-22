@@ -7,7 +7,7 @@ I’ve always been very interested in space. Growing up I would crawl libraries 
 
 ***
 
-https://github.com/badalmer/TXT_IMG2TXT/blob/0af3689fa19f607f5bc6bb989ab682f76f5475a0/TXT_IMG2TXT.pde#L1-L53
+https://github.com/badalmer/Image-2-Text/blob/main/processing/TXT_IMG2TXT.pde#L1-L53
 
 ***
 **Global**
