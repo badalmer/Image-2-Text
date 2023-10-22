@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-size: 30px;
+    }
+  
+  
+    /* Style the "Choose File" input element */
+    #fileInput {
+      background-color: #4CAF50; /* Background color */
+      color: white; /* Text color */
+      padding: 10px; /* Padding around the text */
+      border: none; /* Remove the border */
+      cursor: pointer; /* Change cursor to a pointer on hover */
+      font-size: 30px;
+    }
+    
+    #output {
+      padding-top: 10px;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+
+<body>
+  <p>BRANDON A. DALMER 2023 // IMAGE-2-TEXT</p>
+  <input type="file" id="fileInput" accept="image/*">
+  <p>CLICK TO UPLOAD IMAGE // width must be less than: 100px</p>
+  <div id="output"></div> <!-- Create a new div to display pixel values -->
+  <canvas id="canvas"></canvas>
+
+  <script>
+    let img;
+    let outputDiv;
+
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+      background(0);
+      outputDiv = document.getElementById("output"); // Get the output div
+
+      // Add a change event listener to the file input element
+      document.getElementById("fileInput").addEventListener("change", handleFileSelect);
+    }
+
+    function handleFileSelect(evt) {
+      outputDiv.innerHTML = ""; // Clear the previous content
+      let file = evt.target.files[0];
+      if (file.type.match("image.*")) {
+        img = loadImage(URL.createObjectURL(file), function(loadedImg) {
+          if (loadedImg.width <= 100) { // Check if the image has the required width
+            clear();
+            background(00);
+            image(loadedImg, 10, 10, img.width * 10, img.height * 10); // Draw the image on the canvas
+            loadPixels();
+            let pixelValues = [];
+            
+            for (let y = 0; y < loadedImg.height; y++) {
+              let line = [];
+              for (let x = 0; x < loadedImg.width; x++) {
+                let pixelColor = loadedImg.get(x, y); // get color of the pixel
+                let r = red(pixelColor);
+                let g = green(pixelColor);
+                let b = blue(pixelColor);
+                let code = (r + g + b) / 3;
+                let intCode = int(code);
+                let formattedValue = nf(intCode, 3);
+                fill(formattedValue);
+                line.push(`<span style="color:rgb(${r},${g},${b})">${formattedValue}</span>`);
+              }
+              pixelValues.push(line.join(" ")); // join the line and add it to the pixelValues array
+              line = []; // clear the line for the next row
+              pixelValues.push(line.join(" ")); // join the line and add it to the pixelValues array
+            }
+
+            // Set the font for the entire outputDiv using CSS
+            outputDiv.innerHTML = pixelValues.join("<br>");
+            outputDiv.style.fontFamily = "Courier New"; // set font to Courier New
+            outputDiv.style.fontWeight = "bold"; // set text to bold
+            outputDiv.style.fontSize = "16px";
+          } else {
+            alert("Image width must be 100px !!");
+          }
+        });
+      } else {
+        alert("Unsupported file type: " + file.type);
+      }
+    }
+  </script>
+</body>
+
+</html>
