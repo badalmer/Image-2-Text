@@ -8,8 +8,7 @@
       color: white;
       font-size: 16px;
     }
-  
-  
+
     /* Style the "Choose File" input element */
     #fileInput {
       background-color: #4CAF50; /* Background color */
@@ -19,9 +18,10 @@
       cursor: pointer; /* Change cursor to a pointer on hover */
       font-size: 30px;
     }
-    
+
     #output {
       padding-top: 10px;
+      text-align: center;
     }
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
@@ -58,7 +58,7 @@
             image(loadedImg, 10, 10, img.width * 10, img.height * 10); // Draw the image on the canvas
             loadPixels();
             let pixelValues = [];
-            
+
             for (let y = 0; y < loadedImg.height; y++) {
               let line = [];
               for (let x = 0; x < loadedImg.width; x++) {
@@ -84,7 +84,7 @@
             outputDiv.style.fontWeight = "bold"; // set text to bold
             outputDiv.style.fontSize = "16px";
           } else {
-            alert("Image width must be 100px !!");
+            alert("Image width must be 66px !!");
           }
         });
       } else {
