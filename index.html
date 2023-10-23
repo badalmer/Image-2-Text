@@ -54,7 +54,7 @@
         img = loadImage(URL.createObjectURL(file), function(loadedImg) {
           if (loadedImg.width <= 66) { // Check if the image has the required width
             clear();
-            background(00);
+            background(0);
             image(loadedImg, 10, 10, img.width * 10, img.height * 10); // Draw the image on the canvas
             loadPixels();
             let pixelValues = [];
