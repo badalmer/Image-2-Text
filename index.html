@@ -30,7 +30,7 @@
 <body>
   <p>BRANDON A. DALMER 2023 // IMAGE-2-TEXT</p>
   <input type="file" id="fileInput" accept="image/*">
-  <p>CLICK TO UPLOAD IMAGE // width must be less than: 75px</p>
+  <p>CLICK TO UPLOAD IMAGE // width must be less than: 66px</p>
   <div id="output"></div> <!-- Create a new div to display pixel values -->
   <canvas id="canvas"></canvas>
 
@@ -52,7 +52,7 @@
       let file = evt.target.files[0];
       if (file.type.match("image.*")) {
         img = loadImage(URL.createObjectURL(file), function(loadedImg) {
-          if (loadedImg.width <= 75) { // Check if the image has the required width
+          if (loadedImg.width <= 66) { // Check if the image has the required width
             clear();
             background(00);
             image(loadedImg, 10, 10, img.width * 10, img.height * 10); // Draw the image on the canvas
