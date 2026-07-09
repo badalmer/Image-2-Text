@@ -7,13 +7,9 @@ What better place to start than by reverse engineering what I believe early imag
 ![First image of Mars - Comparison](/images/first_image.avif)
 > *First image of Mars - Comparison*
 
----
-
 ## About
 
 **Image-2-Text** is an image transcoder that converts raster images into text-based representations. The project currently contains two rendering modes:
-
----
 
 ## MONO Mode
 
@@ -26,7 +22,6 @@ Each pixel is converted using:
 
 These values are then recorded before moving on to the next pixel.
 
----
 
 ## CRT Mode
 
@@ -34,13 +29,10 @@ CRT treats each pixel as individual RGB channel data.
 
 Instead of averaging the pixel, each channel is preserved:
 
----
-
 ## Research
 
 More information can be found here: https://brandon-a-dalmer.gitbook.io/studio-notes/codecs/image-2-text
 
----
 
 ## Previous Processing Version
 
@@ -48,12 +40,9 @@ The original Processing version:
 
 https://github.com/badalmer/Image-2-Text/blob/96d9da8ec169e69e7f42e5f58e2fee0ab11c1d5e/processing/TXT_IMG2TXT.pde
 
----
 
 ## Global Variables
 
 `code` - acts as the output number used to calculate brightness of each pixel. 0 meaning black, 255 meaning white.
 
 `file` - uses image input to process pixels individually. Since the program works pixel-by-pixel, smaller low-resolution images are recommended.
-
----
