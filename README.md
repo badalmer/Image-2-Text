@@ -33,10 +33,7 @@ Instead of averaging the pixel, each channel is preserved:
 
 More information can be found here: https://brandon-a-dalmer.gitbook.io/studio-notes/codecs/image-2-text
 
-The original Processing version:
-
-https://github.com/badalmer/Image-2-Text/blob/96d9da8ec169e69e7f42e5f58e2fee0ab11c1d5e/processing/TXT_IMG2TXT.pde
-
+The original Processing version: https://github.com/badalmer/Image-2-Text/blob/96d9da8ec169e69e7f42e5f58e2fee0ab11c1d5e/processing/TXT_IMG2TXT.pde
 
 ## Global Variables
 
