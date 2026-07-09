@@ -29,12 +29,9 @@ CRT treats each pixel as individual RGB channel data.
 
 Instead of averaging the pixel, each channel is preserved:
 
-## Research
+## Links
 
 More information can be found here: https://brandon-a-dalmer.gitbook.io/studio-notes/codecs/image-2-text
-
-
-## Previous Processing Version
 
 The original Processing version:
 
