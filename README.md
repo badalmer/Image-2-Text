@@ -4,7 +4,7 @@ I’ve always been very interested in space. Growing up I would crawl libraries 
 
 What better place to start than by reverse engineering what I believe early image compression and transmission systems were doing in the 1960s.
 
-![First image of Mars comparison](images/mariner4_comparison.jpg)
+![First image of Mars comparison](./images/mariner4_comparison.jpg)
 > *First image of Mars - Comparison*
 
 ---
